@@ -1,8 +1,9 @@
 package internal
 
 type Config struct {
-	ZipFmt    string                `toml:"ZipFmt"`
-	Packs     map[string]PackConfig `toml:"Packs"`
+	PackDir string                `toml:"PackDir"`
+	ZipFmt  string                `toml:"ZipFmt"`
+	Packs   map[string]PackConfig `toml:"Packs"`
 }
 
 type PackConfig struct {

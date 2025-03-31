@@ -21,12 +21,12 @@ func Zip(source, target string) error {
 		if err != nil {
 			return err
 		}
-		
+
 		relPath, err := filepath.Rel(source, path)
 		if err != nil {
 			return err
 		}
-		
+
 		if relPath == "." {
 			return nil // Skip root directory
 		}
@@ -70,29 +70,29 @@ func Unzip(source, destination string) error {
 
 	for _, file := range reader.File {
 		path := filepath.Join(destination, file.Name)
-		
+
 		if file.FileInfo().IsDir() {
 			os.MkdirAll(path, 0755)
 			continue
 		}
 
 		os.MkdirAll(filepath.Dir(path), 0755)
-		
+
 		destFile, err := os.Create(path)
 		if err != nil {
 			return err
 		}
-		
+
 		srcFile, err := file.Open()
 		if err != nil {
 			destFile.Close()
 			return err
 		}
-		
+
 		_, err = io.Copy(destFile, srcFile)
 		srcFile.Close()
 		destFile.Close()
-		
+
 		if err != nil {
 			return err
 		}
@@ -100,4 +100,3 @@ func Unzip(source, destination string) error {
 
 	return nil
 }
-

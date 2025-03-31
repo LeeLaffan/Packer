@@ -13,6 +13,6 @@ func TestGetNewPath(t *testing.T) {
 		"/home/l/temp/packnvim/",
 	)
 
-	var expected = "/home/l/temp/packnvim/nvim/test.lua"
+	expected := "/home/l/temp/packnvim/nvim/test.lua"
 	assert.Equal(t, expected, new_path, "Should be equal")
 }
