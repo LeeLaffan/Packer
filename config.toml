@@ -1,0 +1,18 @@
+ZipFmt = "/home/l/.local/share/lee/vimconfig/%s.zip"
+
+[Packs.mason]
+Source = "/home/l/.local/share/nvim/mason/"
+Excludes = []
+
+[Packs.plugins]
+Source = "/home/l/.local/share/nvim/lee/"
+Excludes = ["/.git", "/tests", ".so", "/test", "/doc", "/docs", "CONTRIBUTING.md", "flake.nix", "flake.lock"]
+
+[Packs.vim]
+Source = "/home/l/.local/share/nvim/mason/"
+Excludes = ["/spell"]
+
+[Packs.pack]
+Source = "/home/l/code/go/packer/bin/"
+Excludes = []
+
